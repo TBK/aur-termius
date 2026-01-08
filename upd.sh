@@ -6,9 +6,9 @@ VER=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/detail
 
 # Update PKGBUILD
 sed -i "s/_[0-9]\+.snap/_$URL/g" PKGBUILD
-sed -i "s/pkgver=.*$/pkgver=$VER/g" PKGBUILD 
+sed -i "s/pkgver=.*$/pkgver=$VER/g" PKGBUILD
 
-# Calc new hash 
+# Calc new hash
 updpkgsums
 
 # Build & install pkg
